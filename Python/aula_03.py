@@ -72,3 +72,13 @@ if(texto == texto[::-1]):
     print('É palíndromo!')
 else:
     print('Não é palíndromo!')
+
+#Listas
+lista = [1,2,53,[5,3]]
+#assim
+nova_lista = lista[3]
+print(nova_lista[1])
+#Ou assim
+print(lista[3][1])
+#ou
+print(lista[:2])
