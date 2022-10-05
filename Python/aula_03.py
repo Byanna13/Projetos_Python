@@ -1,10 +1,3 @@
-#from cgitb import text
-#from statistics import quantiles
-
-
-from cgitb import text
-
-
 texto = "Fabiana"
 print(texto[0])
 print(texto[2])
