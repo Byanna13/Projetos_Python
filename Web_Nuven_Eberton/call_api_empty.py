@@ -22,11 +22,11 @@ address = vision_service_address + "analyze"
 
 # According to the documentation for the analyze image function 
 # There are three optional parameters: language, details & visualFeatures
-parameters  = {'visualFeatures':'Description,Color',
-               'language':'en'}
+parameters  = {'details':'Celebrities',
+               'language':'pt'}
 
 # Open the image file to get a file object containing the image to analyze
-image_path = "./PolarBear.jpg"
+image_path = "./Fotos/xmen.jpg"
 image_data = open(image_path, "rb").read()
 
 # According to the documentation for the analyze image function
@@ -45,3 +45,5 @@ response.raise_for_status()
 # Display the JSON results returned
 results = response.json()
 print(json.dumps(results))
+# print(results['description']['captions'][0]['text'])
+# print(results['description']['tags'])
