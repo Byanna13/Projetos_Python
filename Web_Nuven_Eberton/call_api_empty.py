@@ -3,6 +3,7 @@
 # https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa
 
 # Use the requests library to simplify making a REST API call from Python 
+# Lembrar de importar o requests // pip install requests
 import requests
 
 # We will need the json library to read the data passed back 
@@ -15,7 +16,7 @@ SUBSCRIPTION_KEY = "d6e99366e8b84c77a54c8ac9b429adf8"
 
 # You need to update the vision_service_address to the address of
 # your Computer Vision Service
-vision_service_address = "https://pythonimageanalize1fabiana.cognitiveservices.azure.com/vision/v2.0/"
+vision_service_address = "https://pythonimageanalize1fabiana.cognitiveservices.azure.com/vision/v2.0/ocr?"
 
 # Add the name of the function you want to call to the address
 address = vision_service_address + "analyze"
@@ -23,11 +24,13 @@ address = vision_service_address + "analyze"
 # According to the documentation for the analyze image function 
 # There are three optional parameters: language, details & visualFeatures
 parameters  = {'details':'Celebrities',
-               'language':'pt'}
+               'language':'pt',
+               'detectOrientation':'true'}
 
 # Open the image file to get a file object containing the image to analyze
-image_path = "./Fotos/xmen.jpg"
+image_path = "a-pessoa-criativa.jpg"
 image_data = open(image_path, "rb").read()
+
 
 # According to the documentation for the analyze image function
 # we need to specify the subscription key and the content type

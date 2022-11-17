@@ -1,5 +1,3 @@
-from tkinter import Y
-
 '''Construir um programa Python de nome exerc01_1.py para calcular e exibir a
 média aritmética de 5 números dados.'''
 
