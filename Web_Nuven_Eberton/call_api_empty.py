@@ -28,7 +28,7 @@ parameters  = {'details':'Celebrities',
                'detectOrientation':'true'}
 
 # Open the image file to get a file object containing the image to analyze
-image_path = "a-pessoa-criativa.jpg"
+image_path = "./Fabiana_Souza/a-pessoa-criativa.jpg"
 image_data = open(image_path, "rb").read()
 
 
