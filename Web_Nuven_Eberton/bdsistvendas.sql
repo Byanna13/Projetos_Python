@@ -21,6 +21,11 @@ CREATE TABLE produtos (
   PRIMARY KEY (codProduto)
 );
 
+INSERT INTO produtos (descricao,unidade,vlUnitario) VALUES 
+ ('Arroz','20','4.99');
+
+select * from produtos;
+
 CREATE TABLE cuponsfiscais (
   ccf int NOT NULL IDENTITY(1, 1),
   data date NOT NULL,
@@ -32,6 +37,11 @@ CREATE TABLE cuponsfiscais (
   FOREIGN KEY (fk_idCliente) REFERENCES clientes (idCliente),
 );
 
+INSERT INTO cuponsfiscais (data,hora,formaPagamento,vlTotal,fk_idCliente) VALUES 
+ ('2022-11-19','13:22','3','39.86');
+
+select * from cuponsfiscais;
+
 CREATE TABLE itemcupom (
   fk_ccf int NOT NULL IDENTITY(1, 1),
   fk_codProduto int NOT NULL,
@@ -41,4 +51,9 @@ CREATE TABLE itemcupom (
   PRIMARY KEY (fk_ccf,fk_codProduto,fk_nItem),
   FOREIGN KEY (fk_ccf) REFERENCES cuponsfiscais (ccf),
   FOREIGN KEY (fk_codProduto) REFERENCES produtos (codProduto) 
-) ;
+);
+
+INSERT INTO itemcupom (fk_codProduto,fk_nItem,qtd,vlItem) VALUES 
+ ('3','10','3','4.99');
+
+select * from itemcupom;
