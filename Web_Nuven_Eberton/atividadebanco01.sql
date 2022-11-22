@@ -34,6 +34,10 @@ CREATE TABLE funcionario (
   PRIMARY KEY (cpf)
 );
 
+INSERT INTO funcionario (cpf,nome,rg,Sexo,data_nascimento,end_logradouro,end_numero,end_cidade,end_bairro,end_estado,end_cep,data_admissao,n_carteira_trabalho) VALUES 
+ ('12345','Fabiana Souza','001002','F','1997-09-12','Casa','10','Goianinha','Lagoa do Poço','RN','5917300','2022-11-21','00043');
+
+
 CREATE TABLE produto (
   idproduto int NOT NULL IDENTITY(1,1),
   nome varchar(100) NOT NULL,
