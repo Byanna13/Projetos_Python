@@ -1,5 +1,5 @@
 CREATE TABLE  empresa(
-  cnpj varchar(20) NOT NULL IDENTITY(1,1),
+  cnpj varchar(20) NOT NULL,
   inscricao_estadual varchar(20) NOT NULL,
   razao_social varchar(200) NOT NULL,
   nome_fantasia varchar(200) NOT NULL,
@@ -18,7 +18,7 @@ INSERT INTO empresa (cnpj,inscricao_estadual,razao_social,nome_fantasia,end_logr
 select * from empresa;
 
 CREATE TABLE funcionario (
-  cpf varchar(20) NOT NULL IDENTITY(1,1),
+  cpf varchar(20) NOT NULL,
   nome varchar(200) NOT NULL,
   rg varchar(20) NOT NULL,
   Sexo varchar(10) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE funcionario_caixa (
   hora_fechamento time NOT NULL,
   valor_fechamento float NOT NULL,
   diferenca float NOT NULL,
-  situacao varchar() NOT NULL,
+  situacao varchar(30) NOT NULL,
   PRIMARY KEY (idfuncionario_caixa),
   FOREIGN KEY (fk_funcionario_cpf) REFERENCES funcionario (cpf),
   FOREIGN KEY (fk_idCaixa) REFERENCES caixa (idCaixa) 
