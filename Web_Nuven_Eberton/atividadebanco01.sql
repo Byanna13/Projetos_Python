@@ -13,7 +13,7 @@ CREATE TABLE  empresa(
 );
 
 INSERT INTO empresa (cnpj,inscricao_estadual,razao_social,nome_fantasia,end_logradouro,end_numero,end_bairro,end_cidade,end_estado,end_cep) VALUES 
- ('123455677/89','123456','F Souza Sousa','F Souza Sousa','Casa','Centro','Goianinha','RN','5917300');
+ ('123455677/89','123456','F Souza Sousa','F Souza Sousa','Casa','10','Centro','Goianinha','RN','5917300');
 
 select * from empresa;
 
