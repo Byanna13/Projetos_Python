@@ -47,11 +47,17 @@ CREATE TABLE produto (
   PRIMARY KEY (idproduto)
 );
 
+INSERT INTO produto (nome,descricao,unidade,preco_unitario) VALUES 
+ ('Cavalinha','peixe de mar','40','25.99');
+
 CREATE TABLE caixa (
   idCaixa int NOT NULL IDENTITY(1,1),
   descricao varchar(300) NOT NULL,
   PRIMARY KEY (idCaixa)
 );
+
+INSERT INTO caixa (descricao) VALUES 
+ ('aberto');
 
 CREATE TABLE funcionario_caixa (
   idfuncionario_caixa int NOT NULL IDENTITY(1, 1),
@@ -70,6 +76,9 @@ CREATE TABLE funcionario_caixa (
   FOREIGN KEY (fk_idCaixa) REFERENCES caixa (idCaixa) 
 ) ;
 
+INSERT INTO funcionario_caixa (fk_funcionario_cpf, fk_idCaixa,data_abertura,hora_abertura,valor_abertura,data_fechamento,hora_fechamento,valor_fechamento,diferenca,situacao) VALUES 
+ ('12345','1','2021-11-22','','20.59','2021-11-22','','30','9.41','lucrou');
+
 CREATE TABLE cupom_fiscal (
   ccf int NOT NULL IDENTITY(1, 1),
   data date NOT NULL,
@@ -82,13 +91,19 @@ CREATE TABLE cupom_fiscal (
   FOREIGN KEY (fk_funcionario_caixa_idfuncionario_caixa) REFERENCES funcionario_caixa (idfuncionario_caixa)
 );
 
+INSERT INTO cupom_fiscal (data,hora,valor_total,fk_empresa_cnpj,fk_funcionario_caixa_idfuncionario_caixa) VALUES 
+ ('2021-11-22','9.41','123455677/89','2');
+
 CREATE TABLE item_cupom_fiscal (
-  fk_cumpo_fiscal_ccf int NOT NULL IDENTITY(1, 1),
+  fk_cumpo_fiscal_ccf int NOT NULL,
   fk_produto_idproduto int NOT NULL,
-  item int NOT NULL,
+  item int NOT NULL IDENTITY(1, 1),
   qtd varchar(45) NOT NULL,
   valor_item varchar(45) NOT NULL,
   PRIMARY KEY (fk_cumpo_fiscal_ccf,fk_produto_idproduto,item),
   FOREIGN KEY (fk_cumpo_fiscal_ccf) REFERENCES cupom_fiscal (ccf),
   FOREIGN KEY (fk_produto_idproduto) REFERENCES produto (idproduto) 
 ) ;
+
+INSERT INTO item_cupom_fiscal (fk_cumpo_fiscal_ccf,fk_produto_idproduto,qtd,valor_item) VALUES 
+ ('2','2','3','25.99');
