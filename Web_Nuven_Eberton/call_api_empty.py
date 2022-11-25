@@ -3,7 +3,8 @@
 # https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa
 
 # Use the requests library to simplify making a REST API call from Python 
-# Lembrar de importar o requests // pip install requests
+''' Lembrar de importar o requests // pip install requests '''
+''' Para abrir o resultado, coloca: 'py e o nome do arquivo/projeto'  '''
 import requests
 
 # We will need the json library to read the data passed back 
