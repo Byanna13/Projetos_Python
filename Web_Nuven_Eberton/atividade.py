@@ -3,7 +3,7 @@ altura = float(input('Digite outro número: '))
 
 resultado = peso/altura
     
-if resultado < 18.6:
+if resultado < 18.7:
     print("Seu IMC é: Abaixo do peso")
 elif resultado >= 18.5 and resultado < 24.9:
     print("Seu IMC é: Normal")
